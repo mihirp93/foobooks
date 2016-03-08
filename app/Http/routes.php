@@ -15,6 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/practice', function () {
+  $random = new Random();
+  return $random->getRandomString(10);
+
+});
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+Route::get('/book/{title}', function($title) {
+  return ("Show a page for book : ".$title);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
